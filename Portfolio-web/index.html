@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Porfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+    <!-- navigation area -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Hero section -->
+    <section class="hero" id="home">
+        <div class="hero-contenr">
+            <div class="hero-text">
+                <h1 class="floating-element">Creative Developer</h1>
+                <p class="subtitle">
+                    Creating beautiful digital experiences with modern web
+                    technologies and innovative design solutions
+                </p>
+                <!-- <div class="cta-buttons">
+        <a href="" class="cta-button pulse">View My Works</a>
+        <a href="" class="cta-button secondary">Get in Touch</a>
+      </div> -->
+            </div>
+
+            <!-- Circle photo on the right -->
+            <img src="images/WhatsApp Image 2024-09-10 at 23.10.17_98b653f2.jpg" alt="Profile photo" class="hero-photo">
+        </div>
+    </section>
+
+
+
+
+    <!-- About section -->
+    <section class="section what-i-do" id="about">
+        <h2 class="section-title">What I Do</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🎨</div>
+                <h3>UI/UX Design</h3>
+                <p>Crafting creative and intuitive interfaces tailored to users’ needs, ensuring seamless experiences.
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Web Development</h3>
+                <p>Building responsive, fast, and modern websites using HTML, CSS, JavaScript, and frameworks like
+                    React.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>Mobile Apps</h3>
+                <p>Developing cross-platform mobile applications that are performant, sleek, and user-friendly.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+
+        <div class="skills-container">
+            <div class="technical-skills animate delay-1">
+                <h2>Technical Skills</h2>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">HTML</span>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">CSS</span>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">JavaScript</span>
+                        <span class="skill-percent">65%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">PHP</span>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">React</span>
+                        <span class="skill-percent">50%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 50%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="professional-skills" id="skills">
+                <h2>Professional Skills</h2>
+                <div class="radial-skills">
+                    <!-- Creativity -->
+                    <div class="radial-skill">
+                        <div class="radial-chart">
+                            <svg viewBox="0 0 120 120">
+                                <defs>
+                                    <linearGradient id="grad-creativity" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#6c63ff" />
+                                        <stop offset="100%" stop-color="#ff6584" />
+                                    </linearGradient>
+                                </defs>
+                                <circle class="background" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress" cx="60" cy="60" r="50"
+                                    style="--percent:90; stroke:url(#grad-creativity);"></circle>
+                            </svg>
+                            <div class="radial-percent" data-percent="90%">90%</div>
+                        </div>
+                        <h3>Creativity</h3>
+                    </div>
+
+                    <!-- Communication -->
+                    <div class="radial-skill">
+                        <div class="radial-chart">
+                            <svg viewBox="0 0 120 120">
+                                <defs>
+                                    <linearGradient id="grad-communication" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#00c6ff" />
+                                        <stop offset="100%" stop-color="#0072ff" />
+                                    </linearGradient>
+                                </defs>
+                                <circle class="background" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress" cx="60" cy="60" r="50"
+                                    style="--percent:65; stroke:url(#grad-communication);"></circle>
+                            </svg>
+                            <div class="radial-percent" data-percent="65%">65%</div>
+                        </div>
+                        <h3>Communication</h3>
+                    </div>
+
+                    <!-- Problem Solving -->
+                    <div class="radial-skill">
+                        <div class="radial-chart">
+                            <svg viewBox="0 0 120 120">
+                                <defs>
+                                    <linearGradient id="grad-problem" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#ff9a9e" />
+                                        <stop offset="100%" stop-color="#fad0c4" />
+                                    </linearGradient>
+                                </defs>
+                                <circle class="background" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress" cx="60" cy="60" r="50"
+                                    style="--percent:75; stroke:url(#grad-problem);"></circle>
+                            </svg>
+                            <div class="radial-percent" data-percent="75%">75%</div>
+                        </div>
+                        <h3>Problem Solving</h3>
+                    </div>
+
+                    <!-- Team Work -->
+                    <div class="radial-skill">
+                        <div class="radial-chart">
+                            <svg viewBox="0 0 120 120">
+                                <defs>
+                                    <linearGradient id="grad-team" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#f7971e" />
+                                        <stop offset="100%" stop-color="#ffd200" />
+                                    </linearGradient>
+                                </defs>
+                                <circle class="background" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress" cx="60" cy="60" r="50"
+                                    style="--percent:85; stroke:url(#grad-team);"></circle>
+                            </svg>
+                            <div class="radial-percent" data-percent="85%">85%</div>
+                        </div>
+                        <h3>Team Work</h3>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        
+        <div class="contact-content">
+            <p>
+                Ready to bring your idea to Life? Contact me!
+            </p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>imeshramanayaka988@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>☎️</span>
+                    <span>+94 765616812</span>
+                </div>
+                <div class="contact-item">
+                    <span>🌐</span>
+                    <span>Mathara   , Sri Lanka</span>
+                </div>
+            </div>
+
+            <div style="margin-top: 50px;">
+                <a href="mailto:hello@gmail.com" class="cta-button">
+                    Start a Project
+                    <div class="loading-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

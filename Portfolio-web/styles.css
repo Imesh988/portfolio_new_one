@@ -1,0 +1,846 @@
+/* ===== Base reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+/* Base nav style */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Links desktop */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background: #fff;
+  transition: width 0.3s;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger hidden by default */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive: show hamburger, hide links */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hidden by default */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    width: 200px;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 0 0 0 8px;
+  }
+  .nav-links.show {
+    display: flex; /* show when toggled */
+  }
+  .nav-links li {
+    margin: 1rem 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+/* ===== HERO ===== */
+.hero {
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.hero-contenr {
+  max-width: 800px;
+}
+
+/* Circle image */
+.hero-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 4px solid #fff;
+  box-shadow: 0 0 25px rgba(255,255,255,0.2);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Floating animation for photo and heading */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.floating-element {
+  font-size: 3rem;
+  font-weight: 700;
+  animation: float 4s ease-in-out infinite;
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* CTA buttons */
+.cta-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cta-button {
+  padding: 0.8rem 1.8rem;
+  background: #fff;
+  color: #000;
+  border: 2px solid #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+.cta-button.secondary:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* pulse effect on primary button */
+.pulse {
+  animation: pulseAnim 2s infinite;
+}
+@keyframes pulseAnim {
+  0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
+
+/* ===== SECTIONS ===== */
+/* --- Section Styling --- */
+.what-i-do.section {
+    background-color: #fdfdfd;
+    padding: 80px 20px;
+    text-align: center;
+    color: #111;
+}
+
+/* --- Section Title --- */
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #111;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, #6c63ff, #ff6584);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Cards Grid --- */
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* --- Card Styling --- */
+.card {
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 40px 25px;
+    width: 300px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* --- Card Hover Animation --- */
+.card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+}
+
+/* --- Card Icon --- */
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #6c63ff, #ff6584);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.5s ease;
+}
+
+.card:hover .card-icon {
+    transform: rotate(15deg) scale(1.2);
+}
+
+/* --- Card Title & Text --- */
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .cards-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Skills
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: auto;
+  margin-top: 2rem;
+}
+.skill-item {
+  border: 2px solid #000;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+.skill-item:hover {
+  background: #000;
+  color: #fff;
+}
+.skill-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+} */
+/* --- Section Styling --- */
+.section#skills {
+    background-color: #fdfdfd;
+    padding: 80px 20px;
+    text-align: center;
+    color: #111;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    color: #111;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, #6c63ff, #ff6584);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Skills Graph --- */
+.skills-graph {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Individual Skill --- */
+.skill h4 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    text-align: left;
+    color: #111;
+}
+
+/* --- Skill Bar Container --- */
+.skill-bar {
+    width: 100%;
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- Skill Progress (Animated) --- */
+.skill-progress {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #6c63ff, #ff6584);
+    border-radius: 20px;
+    animation: loadSkill 1.5s forwards;
+}
+
+/* --- Animation for Line Graph --- */
+@keyframes loadSkill {
+    from { width: 0; }
+    to { width: var(--width); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .skills-graph {
+        gap: 20px;
+    }
+}
+
+/* Contact section */
+.contact-content {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+.contact-info {
+  margin-top: 2rem;
+}
+.contact-item {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Loading dots */
+.loading-dots {
+  display: inline-block;
+  margin-left: 8px;
+}
+.loading-dots span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #000;
+  border-radius: 50%;
+  margin: 0 2px;
+  animation: blink 1s infinite;
+}
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink {
+  0%,80%,100% { opacity: 0; }
+  40% { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width:768px) {
+  .floating-element { font-size: 2rem; }
+  .subtitle { font-size: 1rem; }
+  .hero-photo { width: 150px; height: 150px; }
+  .cta-buttons { flex-direction: column; }
+}
+
+
+.hero {
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.hero-contenr {
+  display: flex;                /* put text + image side by side */
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 100%;
+  gap: 2rem;                    /* space between text & image */
+}
+
+.hero-text {
+  flex: 1;                      /* text takes available space */
+}
+
+.hero-photo {
+  width: 380px;                 /* bigger photo */
+  height: 380px;
+  border-radius: 60%;
+  object-fit: cover;
+  border: 0px solid #fff;
+  box-shadow: 0 0 25px rgba(255,255,255,0.2);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* On small screens, stack them */
+@media (max-width: 768px) {
+  .hero-contenr {
+    flex-direction: column-reverse; /* photo below text */
+    text-align: center;
+  }
+  .hero-photo {
+    width: 280px;
+    height: 280px;
+    margin-top: 1rem;
+  }
+}
+
+
+/* new Section  */
+
+/* --- Section Styling --- */
+#skills {
+    padding: 80px 20px;
+    background-color: #fdfdfd;
+    color: #111;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- Section Title --- */
+.section-title h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.section-title h1 span {
+    color: #6c63ff;
+}
+
+.section-title h1::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, #6c63ff, #ff6584);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Skills Container --- */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center;
+}
+
+/* --- Technical Skills --- */
+.technical-skills {
+    flex: 1;
+    min-width: 320px;
+}
+
+.technical-skills h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+.skill-item {
+    margin-bottom: 25px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 14px;
+    background: #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.skill-progress {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #6c63ff, #ff6584);
+    border-radius: 12px;
+    animation: loadSkill 1.5s forwards;
+}
+
+/* Animate technical skill bars */
+@keyframes loadSkill {
+    from { width: 0; }
+    to { width: var(--width); }
+}
+
+/* --- Professional Skills Radial --- */
+.professional-skills {
+    flex: 1;
+    min-width: 320px;
+}
+
+.professional-skills h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+.radial-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.radial-skill {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    text-align: center;
+    transition: transform 0.4s ease;
+}
+
+.radial-skill:hover {
+    transform: scale(1.1);
+}
+
+.radial-chart svg {
+    transform: rotate(-90deg);
+    width: 130px;
+    height: 130px;
+}
+
+.radial-chart circle {
+    fill: none;
+    stroke-width: 12;
+    stroke-linecap: round;
+}
+
+.radial-chart .background {
+    stroke: #e0e0e0;
+}
+
+.radial-chart .progress {
+    stroke: url(#gradient);
+    stroke-dasharray: 314; /* 2 * pi * 50 */
+    stroke-dashoffset: 314;
+    animation: radialAnimation 1.5s forwards;
+}
+
+@keyframes radialAnimation {
+    from { stroke-dashoffset: 314; }
+    to { stroke-dashoffset: calc(314 - (314 * var(--percent) / 100)); }
+}
+
+.radial-percent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 1rem;
+    color: #6c63ff;
+}
+
+.radial-skill h3 {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* --- Gradient for radial charts --- */
+svg defs linearGradient#gradient stop {
+    stop-color: #6c63ff;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
+/* --- Skill Bars --- */
+.skill-bar {
+    width: 100%;
+    height: 14px;
+    background: #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 5px;
+}
+
+.skill-progress {
+    height: 100%;
+    width: 0;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #6c63ff, #ff6584);
+    animation: fillBar 2s forwards;
+}
+
+/* Assign different widths using custom properties */
+.skill-progress.html { animation-name: fillBarHTML; }
+.skill-progress.css { animation-name: fillBarCSS; }
+.skill-progress.js { animation-name: fillBarJS; }
+.skill-progress.php { animation-name: fillBarPHP; }
+.skill-progress.react { animation-name: fillBarReact; }
+
+/* Keyframes for each skill */
+@keyframes fillBarHTML { from { width: 0; } to { width: 90%; } }
+@keyframes fillBarCSS { from { width: 0; } to { width: 75%; } }
+@keyframes fillBarJS { from { width: 0; } to { width: 65%; } }
+@keyframes fillBarPHP { from { width: 0; } to { width: 80%; } }
+@keyframes fillBarReact { from { width: 0; } to { width: 50%; } }
+
+/* --- Skill Percent Text Animation --- */
+.skill-percent {
+    font-weight: 600;
+    color: #6c63ff;
+    display: inline-block;
+    position: relative;
+    animation: countUp 2s forwards;
+}
+
+/* Simulate counting effect (basic) */
+@keyframes countUp {
+    0% { content: '0%'; }
+    100% { content: attr(data-percent); }
+}
+
+
+/* --- Section --- */
+.professional-skills {
+    padding: 60px 20px;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.professional-skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+/* --- Radial Skills Container --- */
+.radial-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+/* --- Each Radial Skill --- */
+.radial-skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- Radial Chart --- */
+.radial-chart {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+}
+
+.radial-chart svg {
+    transform: rotate(-90deg);
+    width: 120px;
+    height: 120px;
+}
+
+.radial-chart circle {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+}
+
+/* --- Background Circle --- */
+.radial-chart .background {
+    stroke: #eee;
+}
+
+/* --- Progress Circle --- */
+.radial-chart .progress {
+    stroke-dasharray: 314; /* 2 * PI * r */
+    stroke-dashoffset: 314;
+    animation: progressAnimation 2s forwards;
+}
+
+/* --- Animate progress --- */
+@keyframes progressAnimation {
+    from { stroke-dashoffset: 314; }
+    to { stroke-dashoffset: calc(314 - (314 * var(--percent) / 100)); }
+}
+
+/* --- Percentage Text --- */
+.radial-percent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* --- Radial Skill Title --- */
+.radial-skill h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #555;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .radial-skills {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* --- Contact Info Container --- */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+/* --- Individual Contact Item --- */
+.contact-item {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    min-width: 250px;
+}
+
+/* --- Hover Effect --- */
+.contact-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* --- Icon Styling --- */
+.contact-item .icon {
+    font-size: 2rem;
+    background: linear-gradient(45deg, #6c63ff, #ff6584);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- Info Text --- */
+.contact-item .info {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
